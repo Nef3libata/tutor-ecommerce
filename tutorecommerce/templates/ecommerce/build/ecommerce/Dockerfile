@@ -18,7 +18,7 @@ RUN nodeenv /openedx/nodeenv --node=16.14.2 --prebuilt
 ENV PATH /openedx/nodeenv/bin:${PATH}
 
 # Install ecommerce
-ARG ECOMMERCE_REPOSITORY=https://github.com/edx/ecommerce.git
+ARG ECOMMERCE_REPOSITORY=git@github.com:Nef3libata/ecommerce-2.git
 ARG ECOMMERCE_VERSION={{ OPENEDX_COMMON_VERSION }}
 RUN mkdir -p /openedx/ecommerce && \
     git clone $ECOMMERCE_REPOSITORY --branch $ECOMMERCE_VERSION --depth 1 /openedx/ecommerce
